@@ -4,9 +4,13 @@ data = json.load(open("data.json"))
 
 
 def translate(word):
-    return data[word]
+    if word in data:
+        return data[word]
+    else:
+        return "Word is not present in database."
 
 
 word = input("Enter word: ")
+
 
 print(translate(word))
